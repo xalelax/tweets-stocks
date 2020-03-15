@@ -16,9 +16,9 @@ api = tweepy.API(auth)
 def get_full_text(status):
     if hasattr(status, "retweeted_status"):  # Check if Retweet
         try:
-            return status.retweeted_status.full_text
+            return 'RT ' + status.retweeted_status.full_text
         except AttributeError:
-            return status.retweeted_status.text
+            return 'RT ' + status.retweeted_status.text
     else:
         try:
             return status.full_text
