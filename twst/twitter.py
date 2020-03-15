@@ -26,9 +26,13 @@ def get_full_text(status):
             return status.text
 
 
-def search(query):
+def search(query, result_type='mixed'):
     """Wrapper for api.search(); returns list of (possibly)
     extended tweets (up to 280 characters)"""
-    search_result = api.search(query, tweet_mode='extended', count=100)
-    tweets = [get_full_text(tweet) for tweet in search_result]
+    search_result = api.search(query + ' -filter:retweets',
+                               tweet_mode='extended',
+                               result_type=result_type,
+                               count=100)
+    tweets = [(tweet.created_at, get_full_text(tweet))
+              for tweet in search_result]
     return tweets
