@@ -18,31 +18,31 @@
       // draws it.
       function drawChart() {
 
-	var jsonData = $.ajax({
-          url: "/data/AAPL/summer",
-          dataType: "json",
-          async: false // TODO: async later
-        }).responseJSON;
+	  var jsonData = $.ajax({
+              url: "/data/AAPL/summer",
+              dataType: "json",
+              async: false // TODO: async later
+          }).responseJSON;
 
-	epochs = jsonData.stock_data.t
-	openings = jsonData.stock_data.o
+	  epochs = jsonData.stock_data.t
+	  openings = jsonData.stock_data.o
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-	data.addColumn('number', 'Epoch');
-	data.addColumn('number', 'Openings');
+          // Create the data table.
+          var data = new google.visualization.DataTable();
+	  data.addColumn('number', 'Epoch');
+	  data.addColumn('number', 'Openings');
 
-        for(i = 0; i < epochs.length; i++)
-          data.addRow([epochs[i], openings[i]]);
+          for(i = 0; i < epochs.length; i++)
+              data.addRow([epochs[i], openings[i]]);
 
-        // Set chart options
-        var options = {'title':'Stock Data test',
-                       'width':400,
-                       'height':300};
+          // Set chart options
+          var options = {'title':'Stock Data test',
+			 'width':400,
+			 'height':300};
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
       }
     </script>
   </head>
