@@ -18,8 +18,16 @@
       // draws it.
       function drawChart() {
 
+	  var symbol = document.getElementById("symbol").value;
+	  var word = document.getElementById("word").value;
+
+	  symbol = (symbol === "") ? "GOOG" : symbol
+	  word = (word === "") ? "Quantum" : symbol
+
+	  url = '/data/'+symbol+'/'+word
+
 	  var jsonData = $.ajax({
-              url: "/data/AAPL/summer",
+              url,
               dataType: "json",
               async: false // TODO: async later
           }).responseJSON;
@@ -53,7 +61,7 @@
       <input type="text" placeholder="e.g. GOOG" id="symbol">
       <label for="word">Word to search for</label>
       <input type="text" placeholder="e.g. Quantum Computing" id="word">
-      <button type="button" onclick="getInputValue();">Let's go!</button>
+      <button type="button" onclick="drawChart();">Let's go!</button>
     </form>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
