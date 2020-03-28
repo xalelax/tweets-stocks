@@ -1,4 +1,5 @@
 import stockdata
+import twitter
 from flask import Flask, render_template, jsonify
 app = Flask(__name__)
 
@@ -9,11 +10,11 @@ def main(name=None):
 
 
 @app.route('/data/<symbol>/<word>')
-def get_data(symbol, word):
+def get_data(symbol, word):  # TODO : refactor this function
     candles = stockdata.get_candles(str(symbol))
+    tweets = twitter.search(str(word))
     # Giving back only time and opening_prices
     stock_data = {'t': candles['t'], 'o': candles['o']}
-    twitter_data = None
 
     return jsonify({'stock_data': stock_data,
-                    'tweets': twitter_data})
+                    'tweets': tweets})
