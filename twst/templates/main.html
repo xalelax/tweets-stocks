@@ -18,36 +18,51 @@
       // draws it.
       function drawChart() {
 
-	var jsonData = $.ajax({
-          url: "/data/AAPL/summer",
-          dataType: "json",
-          async: false // TODO: async later
-        }).responseJSON;
+	  var symbol = document.getElementById("symbol").value;
+	  var word = document.getElementById("word").value;
 
-	epochs = jsonData.stock_data.t
-	openings = jsonData.stock_data.o
+	  symbol = (symbol === "") ? "GOOG" : symbol
+	  word = (word === "") ? "Quantum" : symbol
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-	data.addColumn('number', 'Epoch');
-	data.addColumn('number', 'Openings');
+	  url = '/data/'+symbol+'/'+word
 
-        for(i = 0; i < epochs.length; i++)
-          data.addRow([epochs[i], openings[i]]);
+	  var jsonData = $.ajax({
+              url,
+              dataType: "json",
+              async: false // TODO: async later
+          }).responseJSON;
 
-        // Set chart options
-        var options = {'title':'Stock Data test',
-                       'width':400,
-                       'height':300};
+	  var epochs = jsonData.stock_data.t;
+	  var openings = jsonData.stock_data.o;
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
+          // Create the data table.
+          var data = new google.visualization.DataTable();
+	  data.addColumn('number', 'Epoch');
+	  data.addColumn('number', 'Openings');
+
+          for(i = 0; i < epochs.length; i++)
+              data.addRow([epochs[i], openings[i]]);
+
+          // Set chart options
+          var options = {'title':'Stock Data test',
+			 'width':400,
+			 'height':300};
+
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
       }
     </script>
   </head>
 
   <body>
+    <form>
+      <label for="symbol">Stock Symbol</label>
+      <input type="text" placeholder="e.g. GOOG" id="symbol">
+      <label for="word">Word to search for</label>
+      <input type="text" placeholder="e.g. Quantum Computing" id="word">
+      <button type="button" onclick="drawChart();">Let's go!</button>
+    </form>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
   </body>
