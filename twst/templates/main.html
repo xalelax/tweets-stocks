@@ -7,15 +7,9 @@
 
     <script type="text/javascript">
 
-      // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
       function drawChart() {
 
 	  var symbol = document.getElementById("symbol").value;
@@ -37,11 +31,13 @@
 
           // Create the data table.
           var data = new google.visualization.DataTable();
-	  data.addColumn('number', 'Epoch');
+	  data.addColumn('date', 'Date');
 	  data.addColumn('number', 'Openings');
 
           for(i = 0; i < epochs.length; i++)
-              data.addRow([epochs[i], openings[i]]);
+              data.addRow([
+		  new Date(epochs[i]*1000),
+		  openings[i]]);
 
           // Set chart options
           var options = {'title':'Stock Data test',
