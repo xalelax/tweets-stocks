@@ -29,13 +29,13 @@
 	  var epochs = jsonData.stock_data.t;
 	  var openings = jsonData.stock_data.o;
 
-          // Create the data table.
-          var data = new google.visualization.DataTable();
-	  data.addColumn('date', 'Date');
-	  data.addColumn('number', 'Openings');
+          // Create the stock data table.
+          var stock_data = new google.visualization.DataTable();
+	  stock_data.addColumn('date', 'Date');
+	  stock_data.addColumn('number', 'Openings');
 
           for(i = 0; i < epochs.length; i++)
-              data.addRow([
+              stock_data.addRow([
 		  new Date(epochs[i]*1000),
 		  openings[i]]);
 
@@ -46,7 +46,7 @@
 
           // Instantiate and draw our chart, passing in some options.
           var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-          chart.draw(data, options);
+          chart.draw(stock_data, options);
       }
     </script>
   </head>
