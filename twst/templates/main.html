@@ -31,31 +31,31 @@
 	  var tweets = jsonData.tweets;
 	  
           // Create the stock data table.
-          var stock_data = new google.visualization.DataTable();
-	  stock_data.addColumn('date', 'Date');
-	  stock_data.addColumn('number', 'Openings');
+          var stockData = new google.visualization.DataTable();
+	  stockData.addColumn('date', 'Date');
+	  stockData.addColumn('number', 'Openings');
 
           for(i = 0; i < epochs.length; i++)
-              stock_data.addRow([
+              stockData.addRow([
 		  new Date(epochs[i]*1000),
 		  openings[i]]);
 
 	  // Create tweets data table
-	  var twitter_data = new google.visualization.DataTable();
-	  twitter_data.addColumn('date', 'Date');
-	  twitter_data.addColumn('number', 'Retweet Count');
-	  twitter_data.addColumn({type: 'string', role: 'tooltip'});
+	  var twitterData = new google.visualization.DataTable();
+	  twitterData.addColumn('date', 'Date');
+	  twitterData.addColumn('number', 'Retweet Count');
+	  twitterData.addColumn({type: 'string', role: 'tooltip'});
 	  
 	  for(i = 0; i < tweets.length; i++) {
 	      tweet = tweets[i];
 	      tweetInfos = '@' + tweet.author + ': ' + tweet.text;
-	      twitter_data.addRow([
+	      twitterData.addRow([
 		  new Date(tweet.created_at),
 		  tweet.retweet_count,
 		  tweetInfos]);
 	  }
 
-	  twitter_data.sort([{column: 0}]);
+	  twitterData.sort([{column: 0}]);
 	  
           // Set chart options
           var options = {title:'Stock Data test',
@@ -64,7 +64,7 @@
 
           // Instantiate and draw our chart, passing in some options.
           var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-          chart.draw(twitter_data, options);
+          chart.draw(twitterData, options);
       }
     </script>
   </head>
