@@ -24,8 +24,8 @@
               async: false // TODO: async later
           }).responseJSON;
 
-	  epochs = jsonData.stock_data.t
-	  openings = jsonData.stock_data.o
+	  var epochs = jsonData.stock_data.t;
+	  var openings = jsonData.stock_data.o;
 
           // Create the data table.
           var data = new google.visualization.DataTable();
@@ -48,6 +48,13 @@
   </head>
 
   <body>
+    <form>
+      <label for="symbol">Stock Symbol</label>
+      <input type="text" placeholder="e.g. GOOG" id="symbol">
+      <label for="word">Word to search for</label>
+      <input type="text" placeholder="e.g. Quantum Computing" id="word">
+      <button type="button" onclick="getInputValue();">Let's go!</button>
+    </form>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
   </body>
