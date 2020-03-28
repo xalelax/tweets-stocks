@@ -34,7 +34,7 @@ def search(query, result_type='popular'):
                                result_type=result_type,
                                count=100)
     tweets = [{'created_at': tweet.created_at,
-               'screen_name': tweet.user.screen_name,
+               'author': tweet.user.screen_name,
                'retweet_count': tweet.retweet_count,
                'text': get_full_text(tweet)}
               for tweet in search_result]
