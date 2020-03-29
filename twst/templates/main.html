@@ -16,7 +16,7 @@
 	  var word = document.getElementById("word").value;
 
 	  symbol = (symbol === "") ? "GOOG" : symbol
-	  word = (word === "") ? "Quantum" : symbol
+	  word = (word === "") ? "Quantum" : word
 
 	  url = '/data/'+symbol+'/'+word
 
@@ -67,7 +67,7 @@
 
           // Instantiate and draw our chart, passing in some options.
           var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-          chart.draw(joinedData, options);
+          chart.draw(twitterData, options);
       }
     </script>
   </head>
