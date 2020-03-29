@@ -12,7 +12,7 @@ jobs:
       - python/install-deps
       - run:
           command: pip install .
-	  name: Install current package
+          name: Install current package
       - python/save-cache
       - run:
           command: pytest
