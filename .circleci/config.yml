@@ -18,6 +18,13 @@ jobs:
           command: python -m pytest
           name: Test
 
+deployment:
+  production:
+    branch: master
+    commands:
+      - git remote add production dokku@vps1.angioi.com:twst
+      - git push production master
+
 workflows:
   main:
     jobs:
