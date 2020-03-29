@@ -38,7 +38,6 @@ requests-oauthlib==1.3.0
 six==1.14.0
 traitlets==4.3.3
 tweepy==3.8.0
--e git+git@github.com:xalelax/tweets-stocks.git@0d5f7306cd81e8681f9c4ea95b4db7fe4ad65727#egg=twst
 urllib3==1.25.8
 vcrpy==4.0.2
 wcwidth==0.1.8
