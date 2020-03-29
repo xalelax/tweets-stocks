@@ -1,5 +1,7 @@
 import twst.twitter as t
 import twst.stockdata as s
+from twst.server import app, get_data
+
 import pytest
 from datetime import datetime, timedelta
 
@@ -38,3 +40,11 @@ def test_get_candles():
     """Check Finnhub data"""
     data = s.get_candles('AAPL')
     assert data['s'] == 'ok'
+
+
+@pytest.mark.vcr()
+def test_get_data():
+    """Check that error is thrown for invalid symbols"""
+    with app.app_context():
+        data = get_data('Angioi incorporated GmbH', 'Pavarutti')
+        assert 'error' in data.json
