@@ -1,5 +1,5 @@
-import stockdata
-import twitter
+import twst.stockdata as stockdata
+import twst.twitter as twitter
 from flask import Flask, render_template, jsonify
 from datetime import datetime
 app = Flask(__name__)
@@ -14,6 +14,9 @@ def main(name=None):
 def get_data(symbol, word):  # TODO : refactor this function
     # Getting data from external APIs
     candles = stockdata.get_candles(str(symbol))
+    # Return error if no data found
+    if 't' not in candles:
+        return jsonify({'error': 'Invalid stock symbol'})
     # Converting unix time to datetime for stocks
     stock_data = candles.copy()
     stock_data['t'] = [datetime.fromtimestamp(epoch)

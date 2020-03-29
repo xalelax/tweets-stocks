@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Cookie:
+      - __cfduid=d424d77c5b2d9ba1ecd3bbdb262f20f861585492833
+      User-Agent:
+      - finnhub/python
+    method: GET
+    uri: https://finnhub.io/api/v1/stock/candle?count=7&resolution=D&symbol=Angioi+incorporated+GmbH&token=DUMMY
+  response:
+    body:
+      string: '{"s":"no_data"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 57ba761cc9cd0eb3-FRA
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 29 Mar 2020 15:00:36 GMT
+      Expect-CT:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      X-Ratelimit-Limit:
+      - '90'
+      X-Ratelimit-Remaining:
+      - '89'
+      X-Ratelimit-Reset:
+      - '1585494096'
+    status:
+      code: 200
+      message: OK
+version: 1

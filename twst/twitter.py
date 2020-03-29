@@ -1,5 +1,6 @@
 import tweepy
 import os
+from datetime import datetime
 
 # Getting environment variables
 consumer_key = os.environ['TW_API_KEY']
@@ -27,14 +28,16 @@ def get_full_text(status):
             return status.text
 
 
-def search(query, until=None, result_type='popular'):
+def search(query, until=datetime.now(), result_type='popular'):
     """Wrapper for api.search(); returns list of (possibly)
     extended tweets (up to 280 characters).
 
     Caveat: until must be a datetime object"""
 
-    fmt = '%Y-%m-%d'
-    until_formatted = until.strftime(fmt)
+    if type(until) is datetime:
+        fmt = '%Y-%m-%d'
+        until_formatted = until.strftime(fmt)
+
     search_result = api.search(query + ' -filter:retweets',
                                until=until_formatted,
                                tweet_mode='extended',
