@@ -1,6 +1,33 @@
 <!doctype html>
 <html>
   <head>
+    <style>
+      :root {
+	  --background-color: rgba(3, 0, 33, 1);
+	  --text-color: rgba(255, 248, 240, 1);
+	  --down-color: rgba(165, 39, 20, 1);
+	  --up-color: rgba(15, 157, 88, 1);
+	  --red-accents: rgba(146, 20, 12, 1);
+      }
+      body {
+	  background-color: var(--background-color);
+	  color: var(--text-color);
+      }
+
+      #chart_div {
+	  margin: 10px auto;
+	  padding: 3px;
+	  height: 500px;
+	  width: 70%;
+
+      }
+
+      #inputs {
+	  margin: 3px auto;
+      }
+
+    </style>
+
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -8,13 +35,15 @@
   </head>
 
   <body>
-    <form>
-      <label for="symbol">Stock Symbol</label>
-      <input type="text" placeholder="e.g. GOOG" id="symbol">
-      <label for="word">Word to search for</label>
-      <input type="text" placeholder="e.g. Quantum Computing" id="word">
-      <button type="button" onclick="drawChart();">Let's go!</button>
-    </form>
+    <div id="inputs" align="center">
+      <form>
+	<label for="symbol">Stock Symbol</label>
+	<input type="text" placeholder="e.g. GOOG" id="symbol"> <br><br>
+	<label for="word">Word to search for</label>
+	<input type="text" placeholder="e.g. Quantum Computing" id="word">
+	<button type="button" onclick="drawChart();">Let's go!</button>
+      </form>
+    </div>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
   </body>

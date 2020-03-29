@@ -72,12 +72,11 @@ function drawChart() {
 
     // Set chart options
     var options = {title: symbol + ' price and ' + word + ' tweets',
-		   width:400,
-		   height:300,
 		   candlestick: {
 		       fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
 		       risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
 		   },
+		   tooltip: {ignoreBounds: true},
 		   seriesType: 'candlesticks',
 		   isStacked: true,
 		   series: {
