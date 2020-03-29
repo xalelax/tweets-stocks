@@ -30,12 +30,12 @@ jobs:
           command: git push -f dokku@vps1.angioi.com:twst master
 
 workflows:
-  build-deploy:
+  test-deploy:
     jobs:
-      - build
+      - test
       - deploy:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: master
