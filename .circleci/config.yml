@@ -15,7 +15,7 @@ jobs:
           name: Install current package
       - python/save-cache
       - run:
-          command: pytest
+          command: python -m pytest
           name: Test
 
 workflows:
