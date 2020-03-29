@@ -1,21 +1,25 @@
 <!doctype html>
 <html>
   <head>
-    <!--Load the AJAX API-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='twst.js') }}"></script>
   </head>
 
   <body>
-    <form>
-      <label for="symbol">Stock Symbol</label>
-      <input type="text" placeholder="e.g. GOOG" id="symbol">
-      <label for="word">Word to search for</label>
-      <input type="text" placeholder="e.g. Quantum Computing" id="word">
-      <button type="button" onclick="drawChart();">Let's go!</button>
-    </form>
+    <div id="inputs" align="center">
+      <form>
+	<label for="symbol">Stock Symbol</label>
+	<input type="text" placeholder="e.g. GOOG" id="symbol"> <br><br>
+	<label for="word">Word to search for</label>
+	<input type="text" placeholder="e.g. Quantum Computing" id="word">
+	<button type="button" onclick="drawChart();">Let's go!</button>
+      </form>
+    </div>
     <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
+    <br>
+    <p>VERY early concept. Quite slow (expect to wait a couple of seconds per chart. Hover on the stars to read the tweets.</p>
   </body>
 </html>
