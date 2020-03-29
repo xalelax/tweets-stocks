@@ -1,0 +1,1 @@
+web: gunicorn --chdir twst server:app --workers=4
