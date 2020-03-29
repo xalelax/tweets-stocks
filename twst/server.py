@@ -1,7 +1,18 @@
+import sentry_sdk
+from sentry_sdk.integrations.flask import FlaskIntegration
+
 import twst.stockdata as stockdata
 import twst.twitter as twitter
+
 from flask import Flask, render_template, jsonify
 from datetime import datetime
+
+# Initialize sentry
+sentry_sdk.init(
+    dsn="https://8ec0db70183c464d928b08998836c084@sentry.io/5178828",
+    integrations=[FlaskIntegration()]
+)
+
 app = Flask(__name__)
 
 
