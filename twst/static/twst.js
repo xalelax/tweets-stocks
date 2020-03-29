@@ -71,7 +71,7 @@ function drawChart() {
 	stockData, twitterData, 'full', [[0, 0]], [1,2,3,4], [1,2]);
 
     // Set chart options
-    var options = {title: symbol + ' price and ' + word + ' tweets',
+    var options = {title: symbol + ' price and tweets containing "' + word + '"',
 		   candlestick: {
 		       fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
 		       risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
