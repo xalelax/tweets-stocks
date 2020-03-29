@@ -17,8 +17,25 @@ jobs:
       - run:
           command: python -m pytest
           name: Test
+  deploy:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Add Dokku to known_hosts
+          command: ssh-keyscan -H vps1.angioi.com >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy to Dokku
+          command: git push -f dokku@vps1.angioi.com:twst master
 
 workflows:
-  main:
+  test-deploy:
     jobs:
       - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
