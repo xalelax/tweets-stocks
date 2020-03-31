@@ -11,7 +11,7 @@ def vcr_config():
     return {
         # Replace the Authorization request header with "DUMMY" in cassettes
         "filter_headers": [('authorization', 'DUMMY')],
-        "filter_query_parameters": [('token', 'DUMMY')]
+        "filter_query_parameters": [('token', 'DUMMY'), ('until', 'SOME_DATE')]
     }
 
 
