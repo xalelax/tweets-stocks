@@ -15,10 +15,10 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAyyNsWoEMQxE/0W1EGNZI2v3VxZXaQIJXHFHmpB/D/ZtoxlGb6Rf+ZDzcg/rQz3S
-        qtSDRldnWYR6DBsxVT43WMYd5bEB55YsddJqTJXvxTW3bOo9rKvHe6b13F1wqjzucyj1/l4RNrjB
-        /d5tLPAppzy+ROUl59VYcQw4oI1FMPO2LTpu637EbXtjAVPlR86rolWt6lhay/AACGh2eFsJGzAI
-        zL9/AAAA//8DAMRQoH4bAQAA
+        H4sIAAAAAAAAAzSOMW4EMQhF70KNEAY+xnOVkas0kXalLRKliXL3yJ7ZBj7w4PNLH3ScFilVbAGB
+        saEkgi269GBDSDU2QNAn0+fmu+TYoGGnrE1Uv0BjS5OoEZPpuTY8xNniiime+76CLYZcLj6ZXpu9
+        5lDp2PR+yna1mrFNcjJ90UGvBzF903E2FBSZqrxkC9dbmo24pTfULdHxBjJbqE6mHzrO3qpsQR1D
+        FaqcrtZWB00RpsrRhtcaubp3g82/fwAAAP//AwB7mgdSSwEAAA==
     headers:
       Access-Control-Allow-Headers:
       - Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization
@@ -29,7 +29,7 @@ interactions:
       CF-Cache-Status:
       - DYNAMIC
       CF-RAY:
-      - 57ba58c43ce596e0-FRA
+      - 57cc14eb48759710-FRA
       Connection:
       - keep-alive
       Content-Encoding:
@@ -37,22 +37,22 @@ interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 29 Mar 2020 14:40:34 GMT
+      - Tue, 31 Mar 2020 18:19:59 GMT
       Expect-CT:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Set-Cookie:
-      - __cfduid=d424d77c5b2d9ba1ecd3bbdb262f20f861585492833; expires=Tue, 28-Apr-20
-        14:40:33 GMT; path=/; domain=.finnhub.io; HttpOnly; SameSite=Lax; Secure
+      - __cfduid=d5af4137fff8f9b4497c128ba05e0cbdf1585678798; expires=Thu, 30-Apr-20
+        18:19:58 GMT; path=/; domain=.finnhub.io; HttpOnly; SameSite=Lax; Secure
       Transfer-Encoding:
       - chunked
       X-Ratelimit-Limit:
       - '90'
       X-Ratelimit-Remaining:
-      - '88'
+      - '89'
       X-Ratelimit-Reset:
-      - '1585492862'
+      - '1585678858'
     status:
       code: 200
       message: OK
