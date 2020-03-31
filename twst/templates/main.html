@@ -8,16 +8,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Stocks vs Tweets</title>
   </head>
   <body>
     <div id="inputs" align="center">
       <form>
-	<label for="symbol">Stock Symbol</label>
-	<input type="text" placeholder="e.g. GOOG" id="symbol"> <br><br>
-	<label for="word">Word to search for</label>
-	<input type="text" placeholder="e.g. Quantum Computing" id="word">
-	<button type="button" onclick="drawChart();">Let's go!</button>
+	<div class="row">
+	  <div class="col-md-6">
+	    <label for="symbol">Stock Symbol</label>
+	    <input type="text" placeholder="e.g. GOOG" id="symbol">
+	  </div>
+	  <div class="col-md-6">
+	    <label for="word">Word to search for</label>
+	    <input type="text" placeholder="e.g. Quantum Computing" id="word">
+	    <button type="button" onclick="drawChart();">Let's go!</button>
+	  </div>
+	</div>
       </form>
     </div>
     <!--Div that will hold the pie chart-->
