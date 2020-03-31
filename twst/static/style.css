@@ -1,5 +1,5 @@
 :root {
-    --background-color: rgba(3, 0, 33, 1);
+    --background-color: rgba(3, 0, 13, 1);
     --text-color: rgba(255, 248, 240, 1);
     --down-color: rgba(165, 39, 20, 1);
     --up-color: rgba(15, 157, 88, 1);
@@ -8,16 +8,4 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-}
-
-#chart_div {
-    margin: 10px auto;
-    padding: 3px;
-    height: 400px;
-    width: 60%;
-    
-}
-
-#inputs {
-    margin: 3px auto;
 }
