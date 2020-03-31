@@ -80,6 +80,7 @@ function getRawData(symbol, word) {
 
 
 var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"',
+		    height: 500,
 		    candlestick: {
 			fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
 			risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
