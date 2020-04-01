@@ -82,10 +82,11 @@ function getRawData(symbol, word) {
 var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"',
 		    height: 500,
 		    candlestick: {
-			fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
-			risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
+			fallingColor: { stroke: "#03000d", fill: '#a52714' }, // red
+			risingColor: { stroke: "#03000d", fill: '#0f9d58' }   // green
 		    },
-		    tooltip: {ignoreBounds: true},
+		    backgroundColor: "#fcf8f0",
+		    tooltip: {ignoreBounds: true, isHtml: true},
 		    seriesType: 'candlesticks',
 		    isStacked: true,
 		    series: {
@@ -94,7 +95,8 @@ var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"
 			    labelInLegend: 'Tweets',
 			    targetAxisIndex: 1,
 			    pointShape: {type: 'star'},
-			    pointSize: 10
+			    pointSize: 30,
+			    color: "#00acee"
 			   }
 		    },
 		    vAxes: {
@@ -106,7 +108,7 @@ var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"
 
 
 function drawChart() {
-
+    
     var symbol = document.getElementById("symbol").value;
     var word = document.getElementById("word").value;
 
