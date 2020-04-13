@@ -79,8 +79,8 @@ function getRawData(symbol, word) {
 }
 
 
-var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"',
-		    height: 500,
+var chartOptions = {titlePosition: 'none',
+		    height: 400,
 		    candlestick: {
 			fallingColor: { stroke: "#03000d", fill: '#a52714' }, // red
 			risingColor: { stroke: "#03000d", fill: '#0f9d58' }   // green
@@ -89,6 +89,7 @@ var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"
 		    tooltip: {ignoreBounds: true, isHtml: true},
 		    seriesType: 'candlesticks',
 		    isStacked: true,
+		    legend: 'none',
 		    series: {
 			0: {labelInLegend: symbol},
 			1: {type: 'scatter',
