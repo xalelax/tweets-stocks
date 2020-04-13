@@ -13,22 +13,24 @@
   </head>
   <body>
     <div class="container">
-      <form class="form-inline" onsubmit="drawChart(); return false">
-	<div class="form-group">
-	  <label for="symbol">Stock Symbol </label>
-	  <select class="form-control" id="symbol">
-	    <option value="AAPL">Apple (AAPL)</option>
-	    <option value="GOOG">Google (GOOG)</option>
-	  </select>
-	</div>
-	<div class="form-group">
-	  <label for="word">Word to search for </label>
-	  <input type="text" placeholder="e.g. Quantum Computing" id="word">
-	</div>
-	<button class="btn btn-primary mb-2" type="submit">Let's go!</button>
-      </form>
+      <div class="col-9 mx-auto">
+	<form class="form-inline" onsubmit="drawChart(); return false">
+	  <div class="form-group">
+	    <label for="symbol">Stock Symbol </label>
+	    <select class="form-control" id="symbol">
+	      <option value="AAPL">Apple (AAPL)</option>
+	      <option value="GOOG">Google (GOOG)</option>
+	    </select>
+	  </div>
+	  <div class="form-group">
+	    <label for="word">Word to search for </label>
+	    <input type="text" placeholder="e.g. Quantum Computing" id="word">
+	  </div>
+	  <button class="btn btn-primary mb-2" type="submit">Let's go!</button>
+	</form>
+      </div>
       <!--Div that will hold the chart-->
-      <div class="col-sm-7">
+      <div class="col-9 my-auto mx-auto">
 	<div id="chart_div" class="rounded"></div>
       </div>
       <br>
