@@ -13,19 +13,17 @@
   </head>
   <body>
     <div class="container">
-      <form>
-	<div class="row mt-3 my-auto">
-	  <div class="col-auto">
-	    <label for="symbol">Stock Symbol </label>
-	    <input type="text" placeholder="e.g. GOOG" id="symbol">
-	  </div>
-	  <div class="col-auto my-auto">
-	    <label for="word">Word to search for </label>
-	    <input type="text" placeholder="e.g. Quantum Computing" id="word">
-	    <button class="btn btn-primary mb-2" onclick="drawChart();">Let's go!</button>
-	  </div>
+      <div class="row mt-3 my-auto">
+	<div class="col-auto">
+	  <label for="symbol">Stock Symbol </label>
+	  <input type="text" placeholder="e.g. GOOG" id="symbol">
 	</div>
-      </form>
+	<div class="col-auto my-auto">
+	  <label for="word">Word to search for </label>
+	  <input type="text" placeholder="e.g. Quantum Computing" id="word">
+	  <button class="btn btn-primary mb-2" onclick="drawChart();">Let's go!</button>
+	</div>
+      </div>
       <!--Div that will hold the chart-->
       <div class="col-sm-7">
 	<div id="chart_div" class="rounded"></div>

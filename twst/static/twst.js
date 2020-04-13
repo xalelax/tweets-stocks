@@ -86,7 +86,7 @@ var chartOptions = {titlePosition: 'none',
 			risingColor: { stroke: "#03000d", fill: '#0f9d58' }   // green
 		    },
 		    backgroundColor: "#fcf8f0",
-		    tooltip: {ignoreBounds: true, isHtml: true},
+		    tooltip: {isHtml: true},
 		    seriesType: 'candlesticks',
 		    isStacked: true,
 		    legend: 'none',
