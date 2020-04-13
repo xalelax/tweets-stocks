@@ -13,17 +13,20 @@
   </head>
   <body>
     <div class="container">
-      <div class="row mt-3 my-auto">
-	<div class="col-auto">
+      <form class="form-inline" onsubmit="drawChart()">
+	<div class="form-group">
 	  <label for="symbol">Stock Symbol </label>
-	  <input type="text" placeholder="e.g. GOOG" id="symbol">
+	  <select class="form-control" id="symbol">
+	    <option value="AAPL">Apple (AAPL)</option>
+	    <option value="GOOG">Google (GOOG)</option>
+	  </select>
 	</div>
-	<div class="col-auto my-auto">
+	<div class="form-group">
 	  <label for="word">Word to search for </label>
 	  <input type="text" placeholder="e.g. Quantum Computing" id="word">
-	  <button class="btn btn-primary mb-2" onclick="drawChart();">Let's go!</button>
 	</div>
-      </div>
+	<button class="btn btn-primary mb-2" type="submit">Let's go!</button>
+      </form>
       <!--Div that will hold the chart-->
       <div class="col-sm-7">
 	<div id="chart_div" class="rounded"></div>
