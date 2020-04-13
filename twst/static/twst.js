@@ -86,7 +86,8 @@ var chartOptions = {titlePosition: 'none',
 			risingColor: { stroke: "#03000d", fill: '#0f9d58' }   // green
 		    },
 		    backgroundColor: "#fcf8f0",
-		    tooltip: {isHtml: true},
+		    tooltip: {isHtml: true,
+			      trigger: 'both'},
 		    seriesType: 'candlesticks',
 		    isStacked: true,
 		    legend: 'none',
@@ -96,7 +97,7 @@ var chartOptions = {titlePosition: 'none',
 			    labelInLegend: 'Tweets',
 			    targetAxisIndex: 1,
 			    pointShape: {type: 'star'},
-			    pointSize: 30,
+			    pointSize: 20,
 			    color: "#00acee"
 			   }
 		    },
@@ -112,9 +113,6 @@ function drawChart() {
     
     var symbol = document.getElementById("symbol").value;
     var word = document.getElementById("word").value;
-
-    symbol = (symbol === "") ? "GOOG" : symbol
-    word = (word === "") ? "Quantum" : word
 
     data = getRawData(symbol, word);
 
