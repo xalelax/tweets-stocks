@@ -13,21 +13,31 @@
   </head>
   <body>
     <div class="container">
-      <form>
-	<div class="row">
-	  <div class="col-auto">
-	    <label for="symbol">Stock Symbol </label>
-	    <input type="text" placeholder="e.g. GOOG" id="symbol">
+      <div class="col-9 mx-auto mt-3">
+	<form class="form-inline justify-content-center" onsubmit="drawChart(); return false">
+	  <div class="form-group">
+	    <label for="symbol" class="mr-2">Stock Symbol </label>
+	    <select class="form-control mr-2" id="symbol">
+	      <option value="AAPL">Apple (AAPL)</option>
+	      <option value="GOOG">Google (GOOG)</option>
+	      <option value="FB">Facebook (FB)</option>
+	      <option value="MSFT">Microsoft (MSFT)</option>
+	      <option value="TSLA">Tesla (TSLA)</option>
+	      <option value="BABA">Alibaba (BABA)</option>
+	      <option value="TWTR">Twitter (TWTR)</option>
+	    </select>
 	  </div>
-	  <div class="col-auto"> 	
-	    <label for="word">Word to search for </label>
-	    <input type="text" placeholder="e.g. Quantum Computing" id="word">
-	    <button class="btn btn-primary mb-2" onclick="drawChart();">Let's go!</button>
+	  <div class="form-group">
+	    <label for="word" class="mr-2">Word to search for </label>
+	    <input type="text" class="mr-2" placeholder="e.g. Quantum Computing" value="COVID" id="word">
 	  </div>
-	</div>
-      </form>
-      <!--Div that will hold the pie chart-->
-      <div id="chart_div" class="col-auto"></div>
+	  <button class="btn btn-primary" type="submit">Let's go!</button>
+	</form>
+      </div>
+      <!--Div that will hold the chart-->
+      <div class="col-9 my-5 mx-auto">
+	<div id="chart_div"></div>
+      </div>
       <br>
       <p>VERY early concept. Quite slow (expect to wait a couple of seconds per chart. Hover on the stars to read the tweets.</p>
     </div>

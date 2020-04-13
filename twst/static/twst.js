@@ -79,22 +79,25 @@ function getRawData(symbol, word) {
 }
 
 
-var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"',
-		    height: 500,
+var chartOptions = {height: 400,
 		    candlestick: {
-			fallingColor: { strokeWidth: 0, fill: '#a52714' }, // red
-			risingColor: { strokeWidth: 0, fill: '#0f9d58' }   // green
+			fallingColor: { stroke: "#03000d", fill: '#a52714' }, // red
+			risingColor: { stroke: "#03000d", fill: '#0f9d58' }   // green
 		    },
-		    tooltip: {ignoreBounds: true},
+		    backgroundColor: "#fcf8f0",
+		    tooltip: {isHtml: true,
+			      trigger: 'both'},
 		    seriesType: 'candlesticks',
 		    isStacked: true,
+		    legend: 'none',
 		    series: {
 			0: {labelInLegend: symbol},
 			1: {type: 'scatter',
 			    labelInLegend: 'Tweets',
 			    targetAxisIndex: 1,
 			    pointShape: {type: 'star'},
-			    pointSize: 10
+			    pointSize: 20,
+			    color: "#00acee"
 			   }
 		    },
 		    vAxes: {
@@ -106,12 +109,9 @@ var chartOptions = {title: symbol + ' price and tweets containing "' + word + '"
 
 
 function drawChart() {
-
+    
     var symbol = document.getElementById("symbol").value;
     var word = document.getElementById("word").value;
-
-    symbol = (symbol === "") ? "GOOG" : symbol
-    word = (word === "") ? "Quantum" : word
 
     data = getRawData(symbol, word);
 
@@ -130,5 +130,8 @@ function drawChart() {
 
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+
+    chartOptions.title = symbol + ' price and tweets containing "' + word + '"'
+
     chart.draw(joinedData, chartOptions);
 }
