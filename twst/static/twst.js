@@ -79,8 +79,7 @@ function getRawData(symbol, word) {
 }
 
 
-var chartOptions = {titlePosition: 'none',
-		    height: 400,
+var chartOptions = {height: 400,
 		    candlestick: {
 			fallingColor: { stroke: "#03000d", fill: '#a52714' }, // red
 			risingColor: { stroke: "#03000d", fill: '#0f9d58' }   // green
@@ -131,5 +130,8 @@ function drawChart() {
 
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+
+    chartOptions.title = symbol + ' price and tweets containing "' + word + '"'
+
     chart.draw(joinedData, chartOptions);
 }
