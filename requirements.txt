@@ -7,7 +7,7 @@ chardet==3.0.4
 click==7.1.1
 decorator==4.4.2
 git+git://github.com/s0h3ck/finnhub-api-python-client.git@0396f85d3ec9307c7007ca95c832c59615fc2f13
-Flask==1.1.1
+Flask==1.1.2
 gunicorn==20.0.4
 idna==2.9
 importlib-metadata==1.6.0
