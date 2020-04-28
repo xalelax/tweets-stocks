@@ -21,7 +21,7 @@ more-itertools==8.2.0
 multidict==4.7.5
 oauthlib==3.1.0
 packaging==20.3
-parso==0.6.2
+parso==0.7.0
 pexpect==4.8.0
 pickleshare==0.7.5
 pluggy==0.13.1
