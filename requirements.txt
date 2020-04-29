@@ -4,7 +4,7 @@ backcall==0.1.0
 blinker==1.4
 certifi==2020.4.5.1
 chardet==3.0.4
-click==7.1.1
+click==7.1.2
 decorator==4.4.2
 git+git://github.com/s0h3ck/finnhub-api-python-client.git@0396f85d3ec9307c7007ca95c832c59615fc2f13
 Flask==1.1.2
