@@ -41,7 +41,7 @@ sentry-sdk==0.15.1
 six==1.15.0
 traitlets==4.3.3
 tweepy==3.8.0
-urllib3==1.25.9
+urllib3==1.25.10
 vcrpy==4.0.2
 wcwidth==0.2.5
 Werkzeug==1.0.1
